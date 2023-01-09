@@ -1,20 +1,51 @@
-import '../styles/global.css';
+import type { ColorScheme } from '@mantine/core';
+import { ColorSchemeProvider, MantineProvider } from '@mantine/core';
+import { NotificationsProvider } from '@mantine/notifications';
+import { getCookie, setCookies } from 'cookies-next';
+import type { GetServerSidePropsContext } from 'next';
+import type { AppProps } from 'next/app';
+import { useState } from 'react';
 
-// 1. import `NextUIProvider` component
-import { createTheme, NextUIProvider } from '@nextui-org/react';
+import { rtlCache } from '../../rtl.cache';
 
-// 2. Call `createTheme` and pass your custom values
-// eslint-disable-next-line @typescript-eslint/naming-convention, no-underscore-dangle
-const darkTheme = createTheme({ type: 'dark' });
+export default function App(props: AppProps & { colorScheme: ColorScheme }) {
+  const { Component, pageProps } = props;
+  const [colorScheme, setColorScheme] = useState<ColorScheme>(
+    props.colorScheme
+  );
 
-/** @ts-ignore */
-function MyApp({ Component, pageProps }) {
+  const toggleColorScheme = (value?: ColorScheme) => {
+    const nextColorScheme =
+      value || (colorScheme === 'dark' ? 'light' : 'dark');
+    setColorScheme(nextColorScheme);
+    setCookies('mantine-color-scheme', nextColorScheme, {
+      maxAge: 60 * 60 * 24 * 30,
+    });
+  };
+
   return (
-    // 2. Use at the root of your app
-    <NextUIProvider theme={darkTheme}>
-      <Component {...pageProps} />
-    </NextUIProvider>
+    <>
+      <div>
+        <ColorSchemeProvider
+          colorScheme={colorScheme}
+          toggleColorScheme={toggleColorScheme}
+        >
+          <MantineProvider
+            theme={{ colorScheme }}
+            withGlobalStyles
+            withNormalizeCSS
+            emotionCache={rtlCache}
+          >
+            <NotificationsProvider>
+              <Component {...pageProps} />
+            </NotificationsProvider>
+          </MantineProvider>
+        </ColorSchemeProvider>
+      </div>
+    </>
   );
 }
 
-export default MyApp;
+App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
+  colorScheme: getCookie('mantine-color-scheme', ctx) || 'light',
+});
