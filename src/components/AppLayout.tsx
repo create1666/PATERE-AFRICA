@@ -1,79 +1,43 @@
-import Link from 'next/link';
+import { Box } from '@mantine/core';
 import type { ReactNode } from 'react';
 
-import { AppConfig } from '@/utils/AppConfig';
+import { HeaderNav } from './Header/Header';
+
+// const useStyles = createStyles((theme) => ({
+//   myBackgroundColor: {
+//     background: theme.fn.linearGradient(0, '#9CB9D6', '#ECE9E8'),
+//     background: linear-gradient(135deg, hsla(210, 41%, 73%, 1) 0%, hsla(15, 10%, 92%, 1) 100%)
+//   },
+// }));
 
 type IMainProps = {
   meta: ReactNode;
   children: ReactNode;
 };
 
-const AppShell = (props: IMainProps) => (
-  <div className="w-full px-1 antialiased">
-    {props.meta}
+const linearGradient =
+  'linear-gradient(135deg, hsla(210, 41%, 73%, 1) 0%, hsla(15, 10%, 92%, 1) 100%)';
 
-    <div className="mx-auto max-w-screen-md">
-      <div className="border-b border-gray-300">
-        <div className="pt-16 pb-8">
-          <div className="text-3xl font-bold text-gray-900">
-            {AppConfig.title}
-          </div>
-          <div className="text-xl">{AppConfig.description}</div>
+export const AppShell = (props: IMainProps) => {
+  // const { classes } = useStyles();
+  return (
+    <div style={{ backgroundImage: linearGradient }}>
+      <Box
+        sx={() => ({
+          boxSizing: 'border-box',
+          padding: '4.875rem',
+          width: '100vw',
+          height: '100vh',
+        })}
+      >
+        <HeaderNav />
+        <div className="">
+          <div className="">{props.children}</div>
+
+          {/** footer ---------------------------------------------------------------------*/}
+          <div>Im a Footer</div>
         </div>
-        <div>
-          <ul className="flex flex-wrap text-xl">
-            <li className="mr-6">
-              <Link
-                href="/"
-                className="border-none text-gray-700 hover:text-gray-900"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="mr-6">
-              <Link
-                href="/about/"
-                className="border-none text-gray-700 hover:text-gray-900"
-              >
-                About Us
-              </Link>
-            </li>
-            <li className="mr-6">
-              <a
-                className="border-none text-gray-700 hover:text-gray-900"
-                href="https://github.com/ixartz/Next-js-Boilerplate"
-              >
-                Stock Screener
-              </a>
-            </li>
-            <li className="mr-6">
-              <Link
-                href="/blog/"
-                className="border-none text-gray-700 hover:text-gray-900"
-              >
-                Pricing
-              </Link>
-            </li>
-            <li className="mr-6">
-              <Link
-                href="/blog/"
-                className="border-none text-gray-700 hover:text-gray-900"
-              >
-                Market Insights
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="content py-5 text-xl">{props.children}</div>
-
-      {/** footer ---------------------------------------------------------------------*/}
-      <div className="border-t border-gray-300 py-8 text-center text-sm">
-        Im a Footer
-      </div>
+      </Box>
     </div>
-  </div>
-);
-
-export { AppShell };
+  );
+};

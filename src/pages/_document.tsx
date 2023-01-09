@@ -1,32 +1,23 @@
-import { CssBaseline } from '@nextui-org/react';
+import { createStylesServer, ServerStyles } from '@mantine/next';
 import type { DocumentContext } from 'next/document';
-import Document, { Head, Html, Main, NextScript } from 'next/document';
-import React from 'react';
+import Document from 'next/document';
 
-import { AppConfig } from '@/utils/AppConfig';
-// Need to create a custom _document because i18n support is not compatible with `next export`.
+import { rtlCache } from '../../rtl.cache';
 
-class MyDocument extends Document {
+const stylesServer = createStylesServer(rtlCache);
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export default class _Document extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
+
     return {
       ...initialProps,
-      styles: React.Children.toArray([initialProps.styles]),
+      styles: (
+        <>
+          {initialProps.styles}
+          <ServerStyles html={initialProps.html} server={stylesServer} />
+        </>
+      ),
     };
   }
-
-  // eslint-disable-next-line class-methods-use-this
-  render() {
-    return (
-      <Html lang={AppConfig.locale}>
-        <Head>{CssBaseline.flush()}</Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
 }
-
-export default MyDocument;
