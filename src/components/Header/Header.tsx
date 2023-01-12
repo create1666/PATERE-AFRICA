@@ -1,31 +1,41 @@
-import { Box, Button } from '@mantine/core';
+import { Box, Button, Text } from '@mantine/core';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const data = [
-  { label: ' Home', to: '/' },
-  { label: ' About Us', to: '/about' },
+import { PatereLogo } from '../Reusables/SVGs/Svg';
+
+const NavBarLinks = [
+  { label: ' Home', href: '/' },
+  { label: ' About Us', href: '/about' },
   {
-    label: ' Stock Screener',
-
-    to: '/Stockscreener/',
+    label: ' Shrefck Screener',
+    href: '/Shrefckscreener/',
   },
   {
     label: ' Pricing ',
-
-    to: '/Pricing/',
+    href: '/Pricing/',
   },
   {
     label: 'Market Insights',
-
-    to: '/MarketInsights/',
+    href: '/MarketInsights/',
   },
 ];
 
 export const HeaderNav = () => {
-  const [active, setActive] = useState(0);
+  const [activeRoute, setActiveRoute] = useState('');
   const router = useRouter();
+  useEffect(() => {
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < NavBarLinks.length; i++) {
+      /** @ts-ignore */
+      if (NavBarLinks[i].href.includes(router.pathname.split('/')[2])) {
+        /** @ts-ignore */
+        setActiveRoute(NavBarLinks[i].href);
+      }
+    }
+  }, []);
+
   return (
     <Box
       sx={() => ({
@@ -35,37 +45,52 @@ export const HeaderNav = () => {
         justifyContent: 'space-between',
       })}
     >
-      <div>Patere Africa</div>
-      <div>
-        {data.map((item, index) => {
+      <Box
+        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+      >
+        <PatereLogo />
+        <Text sx={{ color: '#004E98', padding: '0.19rem' }}>PATERE AFRICA</Text>
+      </Box>
+      <Box>
+        {NavBarLinks.map((item, index) => {
           return (
             <Box
               key={index}
               sx={() => ({
-                color: router.pathname === item.to ? '#004E98' : ' #A3A3A3',
+                color:
+                  router.pathname === item?.href || activeRoute === item?.href
+                    ? '#004E98'
+                    : ' #666666',
                 cursor: 'pointer',
                 textDecoration: 'none',
+                padding: '2rem',
               })}
               component={Link}
-              href={item.to}
-              onClick={() => setActive(active + 1)}
+              href={item.href}
             >
               {item.label}
             </Box>
           );
         })}
-      </div>
+      </Box>
 
       <Box>
         <Button
           sx={{
-            marginLeft: '1rem',
+            marginRight: '1rem',
             background: '#004E98',
           }}
         >
           Sign up for a free plan
         </Button>
-        <Button variant="outline">Login</Button>
+        <Button
+          styles={() => ({
+            root: { border: '2px solid #004E98', color: '#11224D' },
+          })}
+          variant="outline"
+        >
+          Login
+        </Button>
       </Box>
     </Box>
   );

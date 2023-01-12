@@ -1,3 +1,5 @@
+import '../styles/global.css';
+
 import type { ColorScheme } from '@mantine/core';
 import { ColorSchemeProvider, MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
@@ -5,8 +7,6 @@ import { getCookie, setCookies } from 'cookies-next';
 import type { GetServerSidePropsContext } from 'next';
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
-
-import { rtlCache } from '../../rtl.cache';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -34,7 +34,6 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             theme={{ colorScheme }}
             withGlobalStyles
             withNormalizeCSS
-            emotionCache={rtlCache}
           >
             <NotificationsProvider>
               <Component {...pageProps} />
