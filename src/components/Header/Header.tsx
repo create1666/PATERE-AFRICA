@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { PatereLogo } from '../Reusables/SVGs/Svg';
 
 const NavBarLinks = [
-  { label: ' Home', href: '/' },
+  { label: ' Home', href: '/home' },
   { label: ' About Us', href: '/about' },
   {
     label: ' Shrefck Screener',
