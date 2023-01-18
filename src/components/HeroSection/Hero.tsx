@@ -1,12 +1,12 @@
-import { Box, Input } from '@mantine/core';
+import { Box } from '@mantine/core';
 import React from 'react';
 
 import {
   CardDashboardSvg,
   DashBoardSvg,
-  SearchIcon,
   UnderLineVectorAccent,
 } from '../Reusables/SVGs/Svg';
+import { InputSearch } from '../SearchInput/InputSearch';
 
 export const Hero = (props: { popularStock: any[] }) => {
   return (
@@ -71,30 +71,10 @@ export const Hero = (props: { popularStock: any[] }) => {
               >
                 Search any stock
               </Box>
-              <Input
-                className="placeholdr"
-                icon={<SearchIcon />}
-                placeholder="Search any stock to research for free"
-                styles={{
-                  icon: {
-                    fontWeight: 400,
-                    left: 25,
-                    height: '52px',
-                  },
-                }}
-                sx={() => ({
-                  input: {
-                    width: '304px',
-                    height: '52px',
-                    paddingLeft: '4rem',
-                    fontFamily: 'Inter',
-                    fontStyle: 'normal',
-                    fontWeight: 400,
-                    fontSize: '12px',
-                    lineHeight: '15px',
-                    display: 'flex',
-                  },
-                })}
+              <InputSearch
+                classNameWrapper=" w-[304px]"
+                classNameInput="52px"
+                IconClassName="52px"
               />
               <Box className="flex flex-row items-center">
                 <span className="text-[12px] font-[400] text-[#666666]">

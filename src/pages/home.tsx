@@ -1,12 +1,15 @@
 // import { useRouter } from 'next/router';
 
-import { Box } from '@mantine/core';
+import { Box, Button } from '@mantine/core';
 import Image from 'next/image';
 import visual_report from 'public/assets/images/visual-report-stats.png';
 
 import { AccordionLayout } from '@/components/AccordionShell/AccordionLayout';
 import { AppShell } from '@/components/AppLayout';
+import { UserCardImage } from '@/components/Article/ArticleList';
+import { CarouselLayout } from '@/components/Carousel/CarouselLayout';
 import { Hero } from '@/components/HeroSection/Hero';
+import { InputSearch } from '@/components/SearchInput/InputSearch';
 import { Meta } from '@/Seo/Meta';
 
 const popularStock = [
@@ -101,6 +104,44 @@ const Home = () => {
             <Image src={visual_report} alt={''} width="775" height="520" />
           </Box>
         </Box>
+      </Box>
+
+      <div>
+        <div className="w-[ 1282px] flex h-[198px] items-center justify-between bg-[#004E98] p-[40px]">
+          <Box className="text-[#ffff]">
+            <Box className="text-[28px] font-[400]">
+              What stock are you currently researching ?
+            </Box>
+            <Box className="text-[18px] font-[500]">
+              Search any company to see the analysis plus any risks and rewards
+              we’ve identified
+            </Box>
+          </Box>
+          <Box className="w-[500px]relative flex">
+            <InputSearch classNameWrapper="w-[500px] " classNameInput="58px" />
+            <Button className="absolute top-[111.494rem] left-[97.26rem] h-[54px] w-[117px] bg-[#FF6700] outline-[#ffff]">
+              Search
+            </Button>
+          </Box>
+        </div>
+      </div>
+
+      <Box className="w-[ 1282px] mt-8 mb-32 h-[198px]">
+        <CarouselLayout>
+          {' '}
+          {[...new Array(8)].map((item) => {
+            return (
+              <UserCardImage
+                key={item}
+                image={''}
+                avatar={''}
+                name={'hjkjl'}
+                job={''}
+                stats={[]}
+              />
+            );
+          })}
+        </CarouselLayout>
       </Box>
     </AppShell>
   );
