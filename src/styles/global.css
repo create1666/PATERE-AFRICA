@@ -6,9 +6,70 @@
 
 
 
-
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
 
 .placeholdr input::placeholder {
 color: #3A6EA5;
 
 }
+.card_desc:hover{
+  color: #3A6EA5;
+  cursor: pointer;
+ 
+}
+.slick-slide {
+  /* width: 412px; */
+  max-height: 516px;
+  padding: 1rem;
+}
+
+.title{
+width: 375px;
+height: 55px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 50px;
+line-height: 110%;
+/* identical to box height, or 55px */
+/* Primary */
+color: #004E98;
+}
+
+ /* Dots */
+  .slick-dotted.slick-slider {
+    /* margin-bottom: 30px; */
+  }
+
+  .ft-slick__dots--custom {
+    height: 8px;
+    width: 8px;
+    background-color:#FFCCA4;
+    border-radius: 4px;
+    position: relative;
+    top: 12px;
+    
+  }
+
+  .slick-dots li {
+   
+    transition: width 0.5s ease-in-out;
+  }
+
+  .slick-dots .slick-active {
+    width: 56px;
+    transition: width 0.3s ease-out;
+  }
+
+  .slick-dots .slick-active .ft-slick__dots--custom {
+    width: 34.8px;
+    top: 0px;
+    overflow: hidden;
+    background-color: #FF6700;
+
+  }

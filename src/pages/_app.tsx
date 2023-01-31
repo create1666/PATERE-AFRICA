@@ -1,7 +1,7 @@
 import '../styles/global.css';
 
 import type { ColorScheme } from '@mantine/core';
-import { ColorSchemeProvider, MantineProvider } from '@mantine/core';
+import { Box, ColorSchemeProvider, MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { getCookie, setCookies } from 'cookies-next';
 import type { GetServerSidePropsContext } from 'next';
@@ -25,7 +25,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
 
   return (
     <>
-      <div>
+      <Box>
         <ColorSchemeProvider
           colorScheme={colorScheme}
           toggleColorScheme={toggleColorScheme}
@@ -40,7 +40,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             </NotificationsProvider>
           </MantineProvider>
         </ColorSchemeProvider>
-      </div>
+      </Box>
     </>
   );
 }

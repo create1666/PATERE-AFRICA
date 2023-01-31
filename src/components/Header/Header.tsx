@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { PatereLogo } from '../Reusables/SVGs/Svg';
 
 const NavBarLinks = [
-  { label: ' Home', href: '/' },
+  { label: ' Home', href: '/home' },
   { label: ' About Us', href: '/about' },
   {
     label: ' Shrefck Screener',
@@ -21,6 +21,12 @@ const NavBarLinks = [
     href: '/MarketInsights/',
   },
 ];
+// const popularStock = [
+//   "Sothema",
+//   "FBN Holdings",
+//   "Misr Fertilizers",
+//   "LabelVie",
+// ];
 
 export const HeaderNav = () => {
   const [activeRoute, setActiveRoute] = useState('');
@@ -37,60 +43,68 @@ export const HeaderNav = () => {
   }, []);
 
   return (
-    <Box
-      sx={() => ({
-        cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      })}
-    >
+    <Box>
       <Box
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-      >
-        <PatereLogo />
-        <Text sx={{ color: '#004E98', padding: '0.19rem' }}>PATERE AFRICA</Text>
-      </Box>
-      <Box>
-        {NavBarLinks.map((item, index) => {
-          return (
-            <Box
-              key={index}
-              sx={() => ({
-                color:
-                  router.pathname === item?.href || activeRoute === item?.href
-                    ? '#004E98'
-                    : ' #666666',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                padding: '2rem',
-              })}
-              component={Link}
-              href={item.href}
-            >
-              {item.label}
-            </Box>
-          );
+        sx={() => ({
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         })}
-      </Box>
-
-      <Box>
-        <Button
+      >
+        <Box
           sx={{
-            marginRight: '1rem',
-            background: '#004E98',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
-          Sign up for a free plan
-        </Button>
-        <Button
-          styles={() => ({
-            root: { border: '2px solid #004E98', color: '#11224D' },
+          <PatereLogo />
+          <Text sx={{ color: '#004E98', padding: '0.19rem' }}>
+            PATERE AFRICA
+          </Text>
+        </Box>
+        <Box>
+          {NavBarLinks.map((item, index) => {
+            return (
+              <Box
+                key={index}
+                sx={() => ({
+                  color:
+                    router.pathname === item?.href || activeRoute === item?.href
+                      ? '#004E98'
+                      : ' #666666',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  padding: '2rem',
+                })}
+                component={Link}
+                href={item.href}
+              >
+                {item.label}
+              </Box>
+            );
           })}
-          variant="outline"
-        >
-          Login
-        </Button>
+        </Box>
+
+        <Box>
+          <Button
+            sx={{
+              marginRight: '1rem',
+              background: '#004E98',
+            }}
+          >
+            Sign up for a free plan
+          </Button>
+          <Button
+            styles={() => ({
+              root: { border: '2px solid #004E98', color: '#11224D' },
+            })}
+            variant="outline"
+          >
+            Login
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
