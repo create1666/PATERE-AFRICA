@@ -17,8 +17,6 @@ export const Hero = (props: { popularStock: any[] }) => {
             display: 'flex',
             justifyContent: 'space-between',
             marginTop: '4.688rem',
-            height: '100vh',
-            overflow: 'scroll',
           }}
         >
           <Box>

@@ -39,79 +39,62 @@
 // });
 
 // export const Article = ArticleComponent;
+// import skeleton from "public/assets/images/skeleton.png";
+import { Box, Card, createStyles, Group, Text } from '@mantine/core';
+import classnames from 'classnames';
+import Image from 'next/image';
+import technology from 'public/assets/images/technology.png';
 
-import { Avatar, Button, Card, createStyles, Group, Text } from '@mantine/core';
-
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
   card: {
-    backgroundColor:
-      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-  },
-
-  avatar: {
-    border: `2px solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
-    }`,
+    backgroundColor: '#FFFFFF',
+    borderRadius: '6.99864px',
+    marginBottom: '2rem',
   },
 }));
 
-interface UserCardImageProps {
-  image: string;
-  avatar: string;
-  name: string;
-  job: string;
-  stats: { label: string; value: string }[];
-}
+// interface UserCardImageProps {
+//   image: string;
+//   avatar: string;
+//   name: string;
+//   job: string;
+//   stats: {
+//     description: string;
+//     label: string;
+//     blogId: number;
+//     content: string;
+//   };
+// }
 
-export function UserCardImage({
-  image,
-  avatar,
-  name,
-  job,
-  stats,
-}: UserCardImageProps) {
-  const { classes, theme } = useStyles();
-
-  const items = stats.map((stat) => (
-    <div key={stat.label}>
-      <Text align="center" size="lg" weight={500}>
-        {stat.value}
-      </Text>
-      <Text align="center" size="sm" color="dimmed">
-        {stat.label}
-      </Text>
-    </div>
-  ));
+export const UserCardImage = () => {
+  const { classes } = useStyles();
 
   return (
-    <Card withBorder p="xl" radius="md" className={classes.card}>
-      <Card.Section sx={{ backgroundImage: `url(${image})`, height: 140 }} />
-      <Avatar
-        src={avatar}
-        size={80}
-        radius={80}
-        mx="auto"
-        mt={-30}
-        className={classes.avatar}
-      />
-      <Text align="center" size="lg" weight={500} mt="sm">
-        {name}
-      </Text>
-      <Text align="center" size="sm" color="dimmed">
-        {job}
-      </Text>
+    <Card withBorder radius="md" className={classnames(classes.card, '')}>
+      <Box className=" relative mb-3 pb-52">
+        <Image
+          src={technology}
+          alt={''}
+          width="374"
+          height="201"
+          className="absolute h-full w-full rounded-md object-cover"
+        />
+      </Box>
+      <Box className="mb-4 text-[#004E98]">
+        On-going expansion of the stock exchange training centre at the tech
+        zonal office, Oda road, Akure
+      </Box>
+      <Box className="text-[#FF6700]">Adamu Tosin | Nov 20</Box>
+
       <Group mt="md" position="center" spacing={30}>
-        {items}
+        <div>
+          <Text size="sm" color="dimmed" className={classnames('card_desc')}>
+            On-going expansion of the stock exchange training centre at the tech
+            zonal office, Oda road, Akure On-going expansion of the guuggj
+            training centre...
+          </Text>
+        </div>
       </Group>
-      <Button
-        fullWidth
-        radius="md"
-        mt="xl"
-        size="md"
-        color={theme.colorScheme === 'dark' ? undefined : 'dark'}
-      >
-        Follow
-      </Button>
     </Card>
   );
-}
+};
