@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import { Box } from '@mantine/core';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
@@ -58,10 +59,10 @@ export const CarouselComponent = ({ href, ...props }: any) => {
   } = props;
   const customSettings = React.useMemo(() => {
     const slidesToShow = 1440 / (width + gap + 50);
-    const dotts = Number(size?.width) >= 1440 && true;
+    const dots = Number(size?.width) >= 1440 && true;
 
     return {
-      dotts,
+      dots,
       appendDots: (dots: any) => <ul>{dots}</ul>,
       customPaging: () => (
         <div className="ft-slick__dots--custom">

@@ -86,12 +86,16 @@ export const AppShell = (props: IMainProps) => {
               <Box onClick={handleChange} className="mt-5 mr-5 cursor-pointer">
                 <ButtonFoo className="" />
               </Box>
-              <Box onClick={handleChange} className="mt-5 cursor-pointer">
+              <Box className="mt-5 cursor-pointer">
                 <ButtonFooRight className="" />
               </Box>
             </Box>
 
-            <Box></Box>
+            <Box>
+              <Text className="mt-10 mb-5 text-[#FFFFFF]">
+                © 2022 Patere Inc. Copyright and rights reserved
+              </Text>
+            </Box>
           </Box>
           <Box></Box>
           <Box></Box>
