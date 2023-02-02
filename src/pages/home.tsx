@@ -23,7 +23,7 @@ const useStyles = createStyles(() => ({
     backgroundColor: '#FFFFFF',
     border: '1px solid #E9E9E9',
     boxShadow: '0px 4px 30px rgba(0, 0, 0, 0.1)',
-    borderRadius: '6.99864px',
+    borderRadius: '21.4333px',
     marginBottom: '2rem',
     maxHeight: ' 516px',
     margin: '1rem',
@@ -167,7 +167,7 @@ const Home = () => {
           </Box>
           <Box className="relative flex overflow-auto">
             <InputSearch classNameWrapper="w-[500px] " classNameInput="58px" />
-            <Button className=" top-[0.11rem] -left-[8rem] h-[54px] w-[125px] bg-[#FF6700] outline-[#ffff]">
+            <Button className=" top-[0.11rem] left-[-8rem] h-[54px] w-[125px] bg-[#FF6700] outline-[#ffff]">
               Search
             </Button>
           </Box>
@@ -188,11 +188,7 @@ const Home = () => {
             .fill('')
             .map((item) => {
               return (
-                <Card
-                  key={item}
-                  radius="md"
-                  className={classnames(classes.card)}
-                >
+                <Card key={item} className={classnames(classes.card)}>
                   <Box className="p-5">
                     <Box>
                       {' '}
@@ -203,7 +199,7 @@ const Home = () => {
                         fillColor="#FF6700"
                       />
                     </Box>
-                    <Box className=" max-w-[18.084rem my-10 text-[#004E98]">
+                    <Box className=" mb-10  text-[#004E98]">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
                       aliquam, purus sit amet luctus venenatis, lectus magna
                     </Box>

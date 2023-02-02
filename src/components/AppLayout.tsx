@@ -1,4 +1,4 @@
-import { Box, Text } from '@mantine/core';
+import { Box, Button, Text } from '@mantine/core';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 // import { FooterLogo, PatereFooterLogo } from '../components/Reusables/SVGs/Svg';
@@ -9,7 +9,14 @@ import type { ReactNode } from 'react';
 
 import { HeaderNav } from './Header/Header';
 import { Hero } from './HeroSection/Hero';
-import { ButtonFoo, ButtonFooRight } from './Reusables/SVGs/Svg';
+import {
+  ButtonFoo,
+  ButtonFooRight,
+  Instagram,
+  Twitter,
+  Youtube,
+} from './Reusables/SVGs/Svg';
+import { EmailInput } from './SearchInput/EmailField';
 
 type IMainProps = {
   meta: ReactNode;
@@ -60,9 +67,9 @@ export const AppShell = (props: IMainProps) => {
           paddingTop: '2rem',
           paddingBottom: '2rem',
         })}
-        className="flex bg-[#004E98]"
+        className="bg-[#004E98]"
       >
-        <Box className="flex">
+        <Box className="flex justify-between">
           <Box>
             <Box className="mb-6 flex items-center">
               <Image
@@ -97,8 +104,39 @@ export const AppShell = (props: IMainProps) => {
               </Text>
             </Box>
           </Box>
-          <Box></Box>
-          <Box></Box>
+          <Box className="w-[450px] ">
+            <Box className="mb-5 flex items-start justify-between text-[16px] font-[600] text-[#FFFFFF] ">
+              <Box className="">About Us</Box>
+              <Box>Plans</Box>
+              <Box>Help Center</Box>
+              <Box>Login</Box>
+            </Box>
+            <Box className="mb-3 text-[14px] font-[400] text-[#ECECEB]">
+              Patere Africa Headquaters <br /> Patere Africa LTD <br />
+              52 Johnson Avenue Ota Adamawa. Nigeria
+            </Box>
+            <Box className="flex items-center">
+              <Twitter />
+              <Instagram className="mx-5" />
+              <Youtube />
+            </Box>
+          </Box>
+          <Box>
+            <Box className="w-[513px]">
+              <Box className="mb-5 text-[16px] font-[600] text-[#FFFFFF]">
+                Stay updated with our weekly newsletter
+              </Box>
+              <EmailInput inputHeight="52px" />
+              <Button className=" top-[.7rem]  h-[56px] w-[193px] bg-[#FF6700]">
+                Search
+              </Button>
+              <Box className="mt-20 flex justify-end">
+                <Text className=" text-[#FFFFFF]">
+                  Terms and Condtions . Privacy Policy
+                </Text>
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>

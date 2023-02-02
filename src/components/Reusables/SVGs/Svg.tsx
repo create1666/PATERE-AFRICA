@@ -1323,4 +1323,105 @@ export const ButtonFooRight = (props: any) => (
   </svg>
 );
 
+export const Twitter = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={21}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M23 1.302a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.279-.028-.557-.08-.83A7.72 7.72 0 0 0 23 1.302v0Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Instagram = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={25}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M17 2.302H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5v-10a5 5 0 0 0-5-5Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16 11.672a4 4 0 1 1-7.913 1.173A4 4 0 0 1 16 11.672ZM17.5 6.802h.01"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Youtube = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={25}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M22.54 6.722a2.78 2.78 0 0 0-1.94-2c-1.72-.42-8.6-.42-8.6-.42s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2 29 29 0 0 0-.46 5.29 29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 1.92c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2c.312-1.733.466-3.49.46-5.25a29.005 29.005 0 0 0-.46-5.33v0Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="m9.75 15.322 5.75-3.27-5.75-3.27v6.54Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Email = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={16}
+    height={17}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M11.333 13.969H4.667c-2 0-3.334-1-3.334-3.334V5.968c0-2.333 1.334-3.333 3.334-3.333h6.666c2 0 3.334 1 3.334 3.333v4.667c0 2.334-1.334 3.334-3.334 3.334Z"
+      stroke="#5C7184"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.333 6.302 9.247 7.968c-.687.547-1.814.547-2.5 0l-2.08-1.666"
+      stroke="#5C7184"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export default VisualRpt;
