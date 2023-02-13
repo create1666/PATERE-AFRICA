@@ -15,6 +15,8 @@ import { AccordionLayout } from '@/components/AccordionShell/AccordionLayout';
 import { AppShell } from '@/components/AppLayout';
 import { UserCardImage } from '@/components/Article/ArticleList';
 import { CarouselComponent } from '@/components/Carousel/CarouselLayout';
+import { HeaderNav } from '@/components/Header/Header';
+import { Hero } from '@/components/HeroSection/Hero';
 import { InputSearch } from '@/components/SearchInput/InputSearch';
 import { Meta } from '@/Seo/Meta';
 
@@ -83,7 +85,14 @@ const linearGradient =
 //   "Misr Fertilizers",
 //   "LabelVie",
 // ];
-
+export const linearGradientHero =
+  'linear-gradient(135deg, hsla(210, 41%, 73%, 1) 0%, hsla(15, 10%, 92%, 1) 100%)';
+export const popularStock = [
+  'Sothema',
+  'FBN Holdings',
+  'Misr Fertilizers',
+  'LabelVie',
+];
 const Home = () => {
   const { classes } = useStyles();
   const [rating] = useState(5);
@@ -111,6 +120,20 @@ const Home = () => {
         />
       }
     >
+      <Box
+        style={{ backgroundImage: linearGradientHero }}
+        sx={() => ({
+          // boxSizing: 'border-box',
+          paddingLeft: '4.875rem',
+          paddingRight: '4.875rem',
+          paddingTop: '1.875rem',
+          width: '100vw',
+          height: '100vh',
+        })}
+      >
+        <HeaderNav />
+        <Hero popularStock={popularStock} />
+      </Box>
       <Box
         style={{ backgroundImage: linearGradient }}
         sx={() => ({

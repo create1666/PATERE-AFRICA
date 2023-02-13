@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import { Box, Button, Text } from '@mantine/core';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -28,7 +29,7 @@ const NavBarLinks = [
 //   "LabelVie",
 // ];
 
-export const HeaderNav = () => {
+export const HeaderNav = ({ wailist }: any) => {
   const [activeRoute, setActiveRoute] = useState('');
   const router = useRouter();
   useEffect(() => {
@@ -43,69 +44,133 @@ export const HeaderNav = () => {
   }, []);
 
   return (
-    <Box>
-      <Box
-        sx={() => ({
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        })}
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <PatereLogo />
-          <Text sx={{ color: '#004E98', padding: '0.19rem' }}>
-            PATERE AFRICA
-          </Text>
-        </Box>
+    <>
+      {!wailist ? (
         <Box>
-          {NavBarLinks.map((item, index) => {
-            return (
-              <Box
-                key={index}
-                sx={() => ({
-                  color:
-                    router.pathname === item?.href || activeRoute === item?.href
-                      ? '#004E98'
-                      : ' #666666',
-                  cursor: 'pointer',
-                  textDecoration: 'none',
-                  padding: '2rem',
-                })}
-                component={Link}
-                href={item.href}
-              >
-                {item.label}
-              </Box>
-            );
-          })}
-        </Box>
-
-        <Box>
-          <Button
-            sx={{
-              marginRight: '1rem',
-              background: '#004E98',
-            }}
-          >
-            Sign up for a free plan
-          </Button>
-          <Button
-            styles={() => ({
-              root: { border: '2px solid #004E98', color: '#11224D' },
+          <Box
+            sx={() => ({
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
             })}
-            variant="outline"
           >
-            Login
-          </Button>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <PatereLogo />
+              <Text sx={{ color: '#004E98', padding: '0.19rem' }}>
+                PATERE AFRICA
+              </Text>
+            </Box>
+            <Box>
+              {NavBarLinks.map((item, index) => {
+                return (
+                  <Box
+                    key={index}
+                    sx={() => ({
+                      color:
+                        router.pathname === item?.href ||
+                        activeRoute === item?.href
+                          ? '#004E98'
+                          : ' #666666',
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      padding: '2rem',
+                    })}
+                    component={Link}
+                    href={item.href}
+                  >
+                    {item.label}
+                  </Box>
+                );
+              })}
+            </Box>
+
+            <Box>
+              <Button
+                sx={{
+                  marginRight: '1rem',
+                  background: '#004E98',
+                }}
+              >
+                Sign up for a free plan
+              </Button>
+
+              <Button
+                styles={() => ({
+                  root: { border: '2px solid #004E98', color: '#11224D' },
+                })}
+                variant="outline"
+              >
+                Login
+              </Button>
+            </Box>
+          </Box>
         </Box>
-      </Box>
-    </Box>
+      ) : (
+        <Box>
+          <Box
+            sx={() => ({
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            })}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <PatereLogo />
+              <Text sx={{ color: '#004E98', padding: '0.19rem' }}>
+                PATERE AFRICA
+              </Text>
+            </Box>
+            <Box>
+              {NavBarLinks.map((item, index) => {
+                return (
+                  <Box
+                    key={index}
+                    sx={() => ({
+                      color:
+                        router.pathname === item?.href ||
+                        activeRoute === item?.href
+                          ? '#004E98'
+                          : ' #666666',
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      padding: '2rem',
+                    })}
+                    component={Link}
+                    href={item.href}
+                  >
+                    {item.label}
+                  </Box>
+                );
+              })}
+            </Box>
+
+            <Box>
+              <Button
+                sx={{
+                  marginRight: '1rem',
+                  background: '#004E98',
+                }}
+              >
+                Join our waitlist
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      )}
+    </>
   );
 };

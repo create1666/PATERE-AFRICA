@@ -7,8 +7,8 @@ import { useRouter } from 'next/router';
 import FooterLogo from 'public/assets/images/FooterLogo.png';
 import type { ReactNode } from 'react';
 
-import { HeaderNav } from './Header/Header';
-import { Hero } from './HeroSection/Hero';
+// import { HeaderNav } from './Header/Header';
+// import { Hero } from './HeroSection/Hero';
 import {
   ButtonFoo,
   ButtonFooRight,
@@ -23,14 +23,14 @@ type IMainProps = {
   children: ReactNode;
 };
 
-const linearGradient =
-  'linear-gradient(135deg, hsla(210, 41%, 73%, 1) 0%, hsla(15, 10%, 92%, 1) 100%)';
-const popularStock = [
-  'Sothema',
-  'FBN Holdings',
-  'Misr Fertilizers',
-  'LabelVie',
-];
+// const linearGradient =
+//   'linear-gradient(135deg, hsla(210, 41%, 73%, 1) 0%, hsla(15, 10%, 92%, 1) 100%)';
+// const popularStock = [
+//   'Sothema',
+//   'FBN Holdings',
+//   'Misr Fertilizers',
+//   'LabelVie',
+// ];
 
 export const AppShell = (props: IMainProps) => {
   const router = useRouter();
@@ -40,23 +40,6 @@ export const AppShell = (props: IMainProps) => {
 
   return (
     <Box>
-      <Box
-        style={{ backgroundImage: linearGradient }}
-        sx={() => ({
-          // boxSizing: 'border-box',
-          paddingLeft: '4.875rem',
-          paddingRight: '4.875rem',
-          paddingTop: '1.875rem',
-          width: '100vw',
-          height: '100vh',
-        })}
-      >
-        <HeaderNav />
-        {router.pathname.includes('home') && (
-          <Hero popularStock={popularStock} />
-        )}
-      </Box>
-
       <Box className="">{props.children}</Box>
 
       {/** footer ---------------------------------------------------------------------*/}
