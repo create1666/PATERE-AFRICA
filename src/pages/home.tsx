@@ -14,9 +14,15 @@ import { Rating } from 'react-simple-star-rating';
 import { AccordionLayout } from '@/components/AccordionShell/AccordionLayout';
 import { AppShell } from '@/components/AppLayout';
 import { UserCardImage } from '@/components/Article/ArticleList';
+import { ButtonShell } from '@/components/Button/Button';
 import { CarouselComponent } from '@/components/Carousel/CarouselLayout';
 import { HeaderNav } from '@/components/Header/Header';
 import { Hero } from '@/components/HeroSection/Hero';
+import {
+  EasyToUnderstand,
+  RightInformation,
+  SaveTime,
+} from '@/components/Reusables/SVGs/Svg';
 import { InputSearch } from '@/components/SearchInput/InputSearch';
 import { Meta } from '@/Seo/Meta';
 
@@ -73,18 +79,7 @@ const arrs = [
 
 const linearGradient =
   'linear-gradient(34deg, #fdddc9 11%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)';
-// "linear-gradient(77deg, rgba(255,178,126,1) 7%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)";
-// " linear-gradient(31deg, rgba(255,178,126,1) 7%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)";
-// "linear-gradient(22deg, rgba(255,178,126,1) 7%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)";
-// background: rgb(255,178,126);
-// "linear-gradient(77deg, rgba(255,178,126,1) 7%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)";
-//  "linear-gradient(7deg, #f9e4da 7%, #ffffff 38%, #ffffff 66%)"
-// const popularStock = [
-//   "Sothema",
-//   "FBN Holdings",
-//   "Misr Fertilizers",
-//   "LabelVie",
-// ];
+
 export const linearGradientHero =
   'linear-gradient(135deg, hsla(210, 41%, 73%, 1) 0%, hsla(15, 10%, 92%, 1) 100%)';
 export const popularStock = [
@@ -93,6 +88,11 @@ export const popularStock = [
   'Misr Fertilizers',
   'LabelVie',
 ];
+// export const LandingPageStyledWrapper = styled.div`
+//   &.heroX {
+//     background: red;
+//   }
+// `;
 const Home = () => {
   const { classes } = useStyles();
   const [rating] = useState(5);
@@ -121,14 +121,12 @@ const Home = () => {
       }
     >
       <Box
+        className=" invisible min-w-max  md:visible  "
         style={{ backgroundImage: linearGradientHero }}
         sx={() => ({
-          // boxSizing: 'border-box',
-          paddingLeft: '4.875rem',
-          paddingRight: '4.875rem',
+          paddingLeft: '7.5rem',
+          paddingRight: '7.5rem',
           paddingTop: '1.875rem',
-          width: '100vw',
-          height: '100vh',
         })}
       >
         <HeaderNav />
@@ -137,14 +135,75 @@ const Home = () => {
       <Box
         style={{ backgroundImage: linearGradient }}
         sx={() => ({
-          paddingLeft: '4.875rem',
-          paddingRight: '4.875rem',
-          paddingTop: '10.875rem',
+          paddingLeft: '7.5rem',
+          paddingRight: '7.5rem',
           paddingBottom: '2rem',
         })}
       >
+        <Box
+          sx={() => ({})}
+          className="flex h-[539px]  justify-between  bg-[#FAFAFA] "
+        >
+          <Box className="mt-20">
+            <Text className="text-[50px] font-[600] text-[#004E98]">
+              Value Propositions
+            </Text>
+            <Text className="my-[28px] w-[646px] text-[16px] font-[500] text-[#A6A6A6]">
+              To create an investor environment that attract and retain capitaln
+              by telling the stories of Africa’s publicly listed companies from
+              an investor’s angle.
+            </Text>
+            <ButtonShell className="mt-10 h-[56px] w-[248px] bg-[#004E98]">
+              <Text className="text-[#FFFFFF]"> Get early access</Text>
+            </ButtonShell>
+          </Box>
+          <Box className="mt-20">
+            <Box>
+              <div className="flex">
+                <RightInformation />
+                <Box>
+                  <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                    Right information
+                  </Text>
+                  <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                    Access reliable information on share prices, divident and
+                    news of publicly listed companies
+                  </Text>
+                </Box>
+              </div>
+            </Box>
+            <Box className="my-10">
+              <div className="flex">
+                <SaveTime />
+                <Box>
+                  <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                    Save time and money
+                  </Text>
+                  <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                    Save valuable time and money as equity research is
+                    time-consuming and very expensive.
+                  </Text>
+                </Box>
+              </div>
+            </Box>
+            <Box>
+              <div className="flex">
+                <EasyToUnderstand />
+                <Box>
+                  <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                    Easy to understand
+                  </Text>
+                  <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                    Access real time update of easy to use and understand equity
+                    research reports
+                  </Text>
+                </Box>
+              </div>
+            </Box>
+          </Box>
+        </Box>
         <Box>
-          <Box className="mx-auto  mb-4 -mt-24 flex-wrap ">
+          <Box className="mx-auto mb-4 mt-24 flex-wrap ">
             <Box className="flex w-[965ppx] flex-col items-center text-[50px] font-[600]  text-[#004E98]">
               <Box className="  ">
                 <span className="font-extrabold text-[#004E98]">Unique</span>{' '}

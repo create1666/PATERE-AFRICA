@@ -1,38 +1,15 @@
-// import React from 'react';
-
-// const waitlist = () => {
-//   return <div>waitlist</div>;
-// };
-
-// export default waitlist;
-
-// import { useRouter } from 'next/router';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { Box, Text } from '@mantine/core';
+import { Box } from '@mantine/core';
 import Image from 'next/image';
 import visual_report from 'public/assets/images/visual-report-stats.png';
 
 import { AccordionLayout } from '@/components/AccordionShell/AccordionLayout';
 import { AppShell } from '@/components/AppLayout';
-import { ButtonShell } from '@/components/Button/Button';
 import { HeaderNav } from '@/components/Header/Header';
 import { Hero } from '@/components/HeroSection/Hero';
 import { Meta } from '@/Seo/Meta';
-
-// const useStyles = createStyles(() => ({
-//   card: {
-//     backgroundColor: '#FFFFFF',
-//     border: '1px solid #E9E9E9',
-//     boxShadow: '0px 4px 30px rgba(0, 0, 0, 0.1)',
-//     borderRadius: '21.4333px',
-//     marginBottom: '2rem',
-//     maxHeight: ' 516px',
-//     margin: '1rem',
-//   },
-// }));
 
 const arrs = [
   {
@@ -137,20 +114,20 @@ const Waitlist = () => {
         <Hero popularStock={popularStock} />
       </Box>
 
-      <Box
+      {/* <Box
         sx={() => ({
           // boxSizing: 'border-box',
           paddingLeft: '4.875rem',
           paddingRight: '4.875rem',
           paddingTop: '1.875rem',
         })}
-        className=" grid h-[539px] grid-cols-1 bg-[#FAFAFA] sm:grid-cols-2"
+        className="flex h-[539px]  justify-between  bg-[#FAFAFA] "
       >
         <Box className="mt-20">
           <Text className="text-[50px] font-[600] text-[#004E98]">
             Value Propositions
           </Text>
-          <Text className="my-[28px] text-[16px] font-[500] text-[#A6A6A6]">
+          <Text className="my-[28px] w-[646px] text-[16px] font-[500] text-[#A6A6A6]">
             To create an investor environment that attract and retain capitaln
             by telling the stories of Africa’s publicly listed companies from an
             investor’s angle.
@@ -159,8 +136,51 @@ const Waitlist = () => {
             <Text className="text-[#FFFFFF]"> Get early access</Text>
           </ButtonShell>
         </Box>
-        <Box className="bg-lime-200">Right information</Box>
-      </Box>
+        <Box className="mt-20">
+          <Box>
+            <div className="flex">
+              <RightInformation />
+              <Box>
+                <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                  Right information
+                </Text>
+                <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                  Access reliable information on share prices, divident and news
+                  of publicly listed companies
+                </Text>
+              </Box>
+            </div>
+          </Box>
+          <Box className="my-10">
+            <div className="flex">
+              <SaveTime />
+              <Box>
+                <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                  Save time and money
+                </Text>
+                <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                  Save valuable time and money as equity research is
+                  time-consuming and very expensive.
+                </Text>
+              </Box>
+            </div>
+          </Box>
+          <Box>
+            <div className="flex">
+              <EasyToUnderstand />
+              <Box>
+                <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                  Easy to understand
+                </Text>
+                <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                  Access real time update of easy to use and understand equity
+                  research reports
+                </Text>
+              </Box>
+            </div>
+          </Box>
+        </Box>
+      </Box> */}
       <Box
         className="grid grid-cols-1 sm:grid-cols-1"
         style={{ backgroundImage: linearGradient }}

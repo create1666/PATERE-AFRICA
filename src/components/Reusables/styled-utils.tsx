@@ -1,5 +1,5 @@
-const customMediaQuery = (maxWidth: number) =>
-  `@media (min-width: ${maxWidth}px)`;
+const customMediaQuery = (minWidth: number) =>
+  `@media (min-width: ${minWidth}px)`;
 
 export const devices = {
   custom: customMediaQuery,

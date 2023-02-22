@@ -115,6 +115,7 @@ export const HeaderNav = ({ wailist }: any) => {
       ) : (
         <Box>
           <Box
+            className="w-full"
             sx={() => ({
               cursor: 'pointer',
               display: 'flex',

@@ -1424,4 +1424,178 @@ export const Email = (
   </svg>
 );
 
+export const RightInformation = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={79}
+    height={78}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#a)">
+      <path fill="#fff" d="M9.339 5h60.196v60H9.339z" />
+    </g>
+    <path
+      d="M38.25 33.75 42 37.5 54.5 25"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M53.25 35v8.75a2.5 2.5 0 0 1-2.5 2.5h-17.5a2.5 2.5 0 0 1-2.5-2.5v-17.5a2.5 2.5 0 0 1 2.5-2.5H47"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <filter
+        id="a"
+        x={0.339}
+        y={0}
+        width={78.196}
+        height={78}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={4.5} />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_0_1"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export const SaveTime = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={79}
+    height={78}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#a)">
+      <path fill="#fff" d="M9.343 5h60.196v60H9.343z" />
+    </g>
+    <path
+      d="M41 47.5c6.904 0 12.5-5.596 12.5-12.5S47.904 22.5 41 22.5 28.5 28.096 28.5 35 34.096 47.5 41 47.5Z"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M41 27.5V35l5 2.5"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <filter
+        id="a"
+        x={0.343}
+        y={0}
+        width={78.196}
+        height={78}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={4.5} />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_0_1"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export const EasyToUnderstand = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={79}
+    height={78}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#a)">
+      <path fill="#fff" d="M9.339 5h60.196v60H9.339z" />
+    </g>
+    <path
+      d="M44.5 18.5h-10A2.5 2.5 0 0 0 32 21v20a2.5 2.5 0 0 0 2.5 2.5h15A2.5 2.5 0 0 0 52 41V26l-7.5-7.5Z"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M44.5 18.5V26H52M47 32.25H37M47 37.25H37M39.5 27.25H37"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <filter
+        id="a"
+        x={0.339}
+        y={0}
+        width={78.196}
+        height={78}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={4.5} />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_0_1"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
 export default VisualRpt;

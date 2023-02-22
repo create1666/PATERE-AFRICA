@@ -109,7 +109,7 @@ export const Hero = (props: { popularStock: any[] }) => {
           </Box>
 
           <Box className="">
-            <DashBoardSvg className="absolute top-20 right-1 min-h-[548.98] min-w-[772px]" />
+            <DashBoardSvg className="absolute right-[0] top-20 min-h-[548.98] min-w-[772px]" />
           </Box>
         </Box>
         <CardDashboardSvg className="absolute right-[33rem] top-[27.2rem]" />

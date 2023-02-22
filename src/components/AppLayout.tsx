@@ -40,13 +40,20 @@ export const AppShell = (props: IMainProps) => {
 
   return (
     <Box>
-      <Box className="">{props.children}</Box>
+      <Box
+        sx={() => ({
+          // paddingLeft: '7.5rem',
+          // paddingRight: '7.5rem',
+        })}
+      >
+        {props.children}
+      </Box>
 
       {/** footer ---------------------------------------------------------------------*/}
       <Box
         sx={() => ({
-          paddingLeft: '4.875rem',
-          paddingRight: '4.875rem',
+          paddingLeft: '7.5rem',
+          paddingRight: '7.5rem',
           paddingTop: '2rem',
           paddingBottom: '2rem',
         })}
