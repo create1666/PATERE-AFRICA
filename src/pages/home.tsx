@@ -77,7 +77,7 @@ const arrs = [
   },
 ];
 
-const linearGradient =
+export const linearGradient =
   'linear-gradient(34deg, #fdddc9 11%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)';
 
 export const linearGradientHero =
@@ -88,11 +88,7 @@ export const popularStock = [
   'Misr Fertilizers',
   'LabelVie',
 ];
-// export const LandingPageStyledWrapper = styled.div`
-//   &.heroX {
-//     background: red;
-//   }
-// `;
+
 const Home = () => {
   const { classes } = useStyles();
   const [rating] = useState(5);

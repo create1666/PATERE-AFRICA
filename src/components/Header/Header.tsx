@@ -48,6 +48,7 @@ export const HeaderNav = ({ wailist }: any) => {
       {!wailist ? (
         <Box>
           <Box
+            className="w-full  "
             sx={() => ({
               cursor: 'pointer',
               display: 'flex',
@@ -98,16 +99,7 @@ export const HeaderNav = ({ wailist }: any) => {
                   background: '#004E98',
                 }}
               >
-                Sign up for a free plan
-              </Button>
-
-              <Button
-                styles={() => ({
-                  root: { border: '2px solid #004E98', color: '#11224D' },
-                })}
-                variant="outline"
-              >
-                Login
+                Join our waitlist
               </Button>
             </Box>
           </Box>
