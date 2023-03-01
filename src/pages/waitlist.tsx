@@ -111,7 +111,20 @@ const Waitlist = () => {
         })}
       >
         <HeaderNav wailist />
-        <Hero popularStock={popularStock} />
+        <Hero
+          hero
+          popularStock={popularStock}
+          inputSearchProps={{
+            id: undefined,
+            name: undefined,
+            query: undefined,
+            handleInputChange: undefined,
+            handleSearch: undefined,
+            classNameWrapper: undefined,
+            classNameInput: undefined,
+            IconClassName: undefined,
+          }}
+        />
       </Box>
 
       {/* <Box

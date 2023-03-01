@@ -92,20 +92,22 @@ export const popularStock = [
 const Home = () => {
   const { classes } = useStyles();
   const [rating] = useState(5);
-  // const{arr} = props
 
-  //   const FilteredArticles = props.posts.reduce(
-  //     (prevArticle: any, currentAarticle: any) => {
-  //       return {
-  //         ...prevArticle,
-  //         [currentAarticle.title]: currentAarticle,
-  //       };
-  //     },
-  // {}
-  //   );
-  // Object.getOwnPropertyNames(FilteredArticles);
+  const [query, setQuery] = useState('');
+  const handleInputChange = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setQuery(event.target.value);
+  };
 
-  // console.log("FilteredArticles", FilteredArticles);
+  const handleSearch = (event: { key: string }) => {
+    if (event.key === 'Enter') {
+      window.location.href = `https://www.google.com/search?q=${query}`;
+    }
+  };
+  const handleButtonClick = () => {
+    window.location.href = `https://www.google.com/search?q=${query}`;
+  };
 
   return (
     <AppShell
@@ -126,7 +128,17 @@ const Home = () => {
         })}
       >
         <HeaderNav />
-        <Hero popularStock={popularStock} />
+        <Hero
+          popularStock={popularStock}
+          hero
+          inputSearchProps={{
+            id: 'id-s1',
+            name: 'search1',
+            query,
+            handleInputChange,
+            handleSearch,
+          }}
+        />
       </Box>
       <Box
         style={{ backgroundImage: linearGradient }}
@@ -244,8 +256,17 @@ const Home = () => {
             </Box>
           </Box>
           <Box className="relative flex overflow-auto">
-            <InputSearch classNameWrapper="w-[500px] " classNameInput="58px" />
-            <Button className=" top-[0.11rem] left-[-8rem] h-[54px] w-[125px] bg-[#FF6700] outline-[#ffff]">
+            <InputSearch
+              query={query}
+              handleInputChange={handleInputChange}
+              handleSearch={handleSearch}
+              classNameWrapper="w-[500px] "
+              classNameInput="58px"
+            />
+            <Button
+              onClick={handleButtonClick}
+              className=" top-[0.11rem] left-[-8rem] h-[54px] w-[125px] bg-[#FF6700] outline-[#ffff]"
+            >
               Search
             </Button>
           </Box>
@@ -269,7 +290,6 @@ const Home = () => {
                 <Card key={item} className={classnames(classes.card)}>
                   <Box className="p-5">
                     <Box>
-                      {' '}
                       <Rating
                         initialValue={rating}
                         className=""

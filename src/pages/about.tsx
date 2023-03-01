@@ -1,12 +1,8 @@
-// import { AppShell } from '@/components/AppLayout';
-// import { Meta } from '@/Seo/Meta';
 import { Box, Card, createStyles, Text } from '@mantine/core';
 import classnames from 'classnames';
-// import { url } from 'inspector';
 import Image from 'next/image';
 import skeleton from 'public/assets/images/skeleton.png';
-import React, { useState } from 'react';
-import { Rating } from 'react-simple-star-rating';
+import Team from 'public/assets/images/Team.png';
 
 import { ButtonShell } from '@/components/Button/Button';
 import FooterLayout from '@/components/Footer/FooterLayout';
@@ -28,12 +24,13 @@ const useStyles = createStyles(() => ({
     borderRadius: '21.4333px',
     marginBottom: '2rem',
     maxHeight: ' 516px',
-    margin: '1rem',
+    margin: ' .5rem',
+    padding: '0 !important',
   },
 }));
 const About = () => {
   const { classes } = useStyles();
-  const [rating] = useState(5);
+
   return (
     <>
       <Box
@@ -45,7 +42,20 @@ const About = () => {
         })}
       >
         <HeaderNav />
-        <Hero popularStock={popularStock} />
+        <Hero
+          about
+          popularStock={popularStock}
+          inputSearchProps={{
+            id: undefined,
+            name: undefined,
+            query: undefined,
+            handleInputChange: undefined,
+            handleSearch: undefined,
+            classNameWrapper: undefined,
+            classNameInput: undefined,
+            IconClassName: undefined,
+          }}
+        />
       </Box>
 
       <Box
@@ -56,6 +66,50 @@ const About = () => {
           paddingBottom: '2rem',
         })}
       >
+        <Box className="flex items-center justify-between">
+          <Box>
+            <Image src={Team} alt={''} width="604" height="587" />
+          </Box>
+
+          <Box>
+            <Box className="text-[28px] font-[700] text-[#FF6700] ">
+              Our Expertise
+            </Box>
+            <Box className=" w-[599.19px] text-[45px] font-[500] text-[#004E98]">
+              We give best solution to grow up your business
+            </Box>
+            <Box className="w-[529px] text-[24px] font-[500] text-[#808095] ">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </Box>
+            <Box className="flex justify-between">
+              <Box>
+                <Text className="text-[36px] font-[700] text-[#004E98]">
+                  100+
+                </Text>
+                <Text className="text-[18px] font-[400] text-[#121B24]">
+                  Investment Platform
+                </Text>
+              </Box>
+              <Box>
+                <Text className="text-[36px] font-[700] text-[#004E98]">
+                  5K
+                </Text>
+                <Text className="text-[18px] font-[400] text-[#121B24]">
+                  Monthly active users
+                </Text>
+              </Box>
+              <Box>
+                <Text className="text-[36px] font-[700] text-[#004E98]">
+                  3X
+                </Text>
+                <Text className="text-[18px] font-[400] text-[#121B24]">
+                  Growth Rate
+                </Text>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
         <Box sx={() => ({})} className=" flex h-[539px]  justify-between  ">
           <Box className="mt-20">
             <Text className="text-[50px] font-[600] text-[#004E98]">
@@ -116,45 +170,39 @@ const About = () => {
           </Box>
         </Box>
 
-        <div className="my-5 flex justify-center text-[50px] font-[600] text-[#004E98]">
-          What people say about us
+        <div className="my-5 flex flex-col  items-center justify-center ">
+          <Box className="text-[28px] font-[700] text-[#FF6700]">Our Team</Box>
+          <Box className="text-[45px] font-[500] text-[#004E98]">
+            Meet Our Team
+          </Box>
         </div>
-        <Box className="mb-10 flex p-0">
+        <Box className=" flex items-center px-[200px]">
           {Array(3)
             .fill('')
             .map((item) => {
               return (
                 <Card key={item} className={classnames(classes.card)}>
+                  <Box className="relative mb-3 w-[386px] border-gray-900 pb-72">
+                    <Image
+                      src={skeleton}
+                      alt={''}
+                      width="374"
+                      height="201"
+                      className="absolute h-full w-full rounded-md object-cover"
+                    />
+                  </Box>
                   <Box className="p-5">
-                    <Box>
-                      {' '}
-                      <Rating
-                        initialValue={rating}
-                        className=""
-                        size={15}
-                        fillColor="#FF6700"
-                      />
-                    </Box>
-                    <Box className=" mb-10  text-[#004E98]">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                      aliquam, purus sit amet luctus venenatis, lectus magna
-                    </Box>
-                    <Box className="flex ">
-                      <Box className="relative mr-20 pb-4">
-                        <Image
-                          src={skeleton}
-                          alt={''}
-                          className="  absolute  h-[51.44px] w-[51.44px] rounded-full"
-                        />
-                      </Box>
-                      <Box>
+                    <Box className="flex  flex-col items-center">
+                      <div>
                         <Text className="text-[17.1467px] font-[700] text-[#3A6EA5]">
-                          Asantee Milly
+                          Victoria Nnenna Ani
                         </Text>
+                      </div>
+                      <div>
                         <Text className="text-[15.003px] font-[400] text-[#5C7184] ">
-                          Lagos. Nigeria
+                          Ìnvestment Analyst
                         </Text>
-                      </Box>
+                      </div>
                     </Box>
                   </Box>
                 </Card>
