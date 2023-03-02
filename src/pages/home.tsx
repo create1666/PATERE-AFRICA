@@ -108,7 +108,17 @@ const Home = () => {
   const handleButtonClick = () => {
     window.location.href = `https://www.google.com/search?q=${query}`;
   };
+  const formUrl =
+    'https://docs.google.com/forms/d/e/1FAIpQLSc-Us-OHUVFA5DACXrkbQNdY58sWCAC6NtPdlgbMId2kiaFmw/viewform?usp=pp_url';
 
+  const redirectToForm = () => {
+    const emailPlaceholder = '';
+    const namePlaceholder = '';
+    const encodedEmailPlaceholder = encodeURIComponent(emailPlaceholder);
+    const encodedNamePlaceholder = encodeURIComponent(namePlaceholder);
+    const prefillUrl = `${formUrl}&entry.1113385170=${encodedEmailPlaceholder}&entry.871292895=${encodedNamePlaceholder}`; // Replace the field IDs with the appropriate ones from your form
+    window.location.href = prefillUrl;
+  };
   return (
     <AppShell
       meta={
@@ -127,7 +137,7 @@ const Home = () => {
           paddingTop: '1.875rem',
         })}
       >
-        <HeaderNav />
+        <HeaderNav onClick={redirectToForm} />
         <Hero
           popularStock={popularStock}
           hero
@@ -161,7 +171,10 @@ const Home = () => {
               by telling the stories of Africa’s publicly listed companies from
               an investor’s angle.
             </Text>
-            <ButtonShell className="mt-10 h-[56px] w-[248px] bg-[#004E98]">
+            <ButtonShell
+              className="mt-10 h-[56px] w-[248px] bg-[#004E98]"
+              onClick={redirectToForm}
+            >
               <Text className="text-[#FFFFFF]"> Get early access</Text>
             </ButtonShell>
           </Box>
@@ -348,6 +361,7 @@ const Home = () => {
 // console.log(moreArticles);
 //   return { props: { article, moreArticles } };
 // };
+// https://docs.google.com/forms/d/e/1FAIpQLSc-Us-OHUVFA5DACXrkbQNdY58sWCAC6NtPdlgbMId2kiaFmw/viewform?usp=sf_link
 const posts = [
   {
     title: 'Music',

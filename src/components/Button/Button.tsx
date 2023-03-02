@@ -1,6 +1,19 @@
 import { Button } from '@mantine/core';
 import React from 'react';
 
-export const ButtonShell = ({ children, className }: any) => {
-  return <Button className={className}>{children}</Button>;
+interface ButtonProps {
+  onClick: () => void;
+  children: React.ReactNode;
+  className?: string;
+}
+export const ButtonShell: React.FC<ButtonProps> = ({
+  onClick,
+  children,
+  className,
+}) => {
+  return (
+    <Button onClick={onClick} className={className}>
+      {children}
+    </Button>
+  );
 };

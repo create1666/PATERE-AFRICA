@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
+import { ButtonShell } from '../Button/Button';
 import { PatereLogo } from '../Reusables/SVGs/Svg';
 
 const NavBarLinks = [
@@ -22,14 +23,13 @@ const NavBarLinks = [
     href: '/MarketInsights/',
   },
 ];
-// const popularStock = [
-//   "Sothema",
-//   "FBN Holdings",
-//   "Misr Fertilizers",
-//   "LabelVie",
-// ];
 
-export const HeaderNav = ({ wailist }: any) => {
+interface HeaderProps {
+  onClick: () => void;
+  wailist?: boolean;
+}
+
+export const HeaderNav: React.FC<HeaderProps> = ({ wailist, onClick }) => {
   const [activeRoute, setActiveRoute] = useState('');
   const router = useRouter();
   useEffect(() => {
@@ -93,14 +93,9 @@ export const HeaderNav = ({ wailist }: any) => {
             </Box>
 
             <Box>
-              <Button
-                sx={{
-                  marginRight: '1rem',
-                  background: '#004E98',
-                }}
-              >
+              <ButtonShell className="mr-[1rem] bg-[#004E98]" onClick={onClick}>
                 Join our waitlist
-              </Button>
+              </ButtonShell>
             </Box>
           </Box>
         </Box>

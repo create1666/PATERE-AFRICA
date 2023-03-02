@@ -41,7 +41,7 @@ const About = () => {
           paddingTop: '1.875rem',
         })}
       >
-        <HeaderNav />
+        <HeaderNav onClick={() => ''} />
         <Hero
           about
           popularStock={popularStock}
@@ -51,9 +51,6 @@ const About = () => {
             query: undefined,
             handleInputChange: undefined,
             handleSearch: undefined,
-            classNameWrapper: undefined,
-            classNameInput: undefined,
-            IconClassName: undefined,
           }}
         />
       </Box>
@@ -120,7 +117,10 @@ const About = () => {
               by telling the stories of Africa’s publicly listed companies from
               an investor’s angle.
             </Text>
-            <ButtonShell className="mt-10 h-[56px] w-[248px] bg-[#004E98]">
+            <ButtonShell
+              className="mt-10 h-[56px] w-[248px] bg-[#004E98]"
+              onClick={() => ''}
+            >
               <Text className="text-[#FFFFFF]"> Get early access</Text>
             </ButtonShell>
           </Box>

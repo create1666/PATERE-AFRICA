@@ -110,7 +110,7 @@ const Waitlist = () => {
           height: '100vh',
         })}
       >
-        <HeaderNav wailist />
+        <HeaderNav wailist onClick={() => ''} />
         <Hero
           hero
           popularStock={popularStock}
