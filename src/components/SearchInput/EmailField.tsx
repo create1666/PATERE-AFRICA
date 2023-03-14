@@ -4,14 +4,29 @@ import React from 'react';
 
 import { Email } from '../Reusables/SVGs/Svg';
 
+export type EmailInputProps = {
+  id?: string;
+  name?: string;
+  emailValue?: string | number | readonly string[];
+  handleInputChange?: React.ChangeEventHandler<HTMLInputElement>;
+  classNameWrapper?: string;
+  classNameInput?: string;
+  IconClassName?: string;
+  inputHeight?: string;
+};
 export const EmailInput = ({
   classNameWrapper,
   inputHeight,
   IconClassName,
-}: any) => {
+  emailValue,
+  handleInputChange,
+}: EmailInputProps) => {
   return (
     <div className="">
       <Input
+        type="email"
+        value={emailValue}
+        onChange={handleInputChange}
         className={classnames(
           'placeholdr',
           ' flex  text-[12px] font-[400]',

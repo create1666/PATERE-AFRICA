@@ -1,9 +1,10 @@
-import { Box, Button, Text } from '@mantine/core';
+import { Box, Text } from '@mantine/core';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import FooterLogo from 'public/assets/images/FooterLogo.png';
 import React from 'react';
 
+import Newsletter from '../NewsLetter/NewsLetter';
 import {
   ButtonFoo,
   ButtonFooRight,
@@ -11,7 +12,6 @@ import {
   Twitter,
   Youtube,
 } from '../Reusables/SVGs/Svg';
-import { EmailInput } from '../SearchInput/EmailField';
 
 const FooterLayout = () => {
   const router = useRouter();
@@ -82,18 +82,7 @@ const FooterLayout = () => {
         </Box>
         <Box>
           <Box className="w-[513px]">
-            <Box className="mb-5 text-[16px] font-[600] text-[#FFFFFF]">
-              Stay updated with our weekly newsletter
-            </Box>
-            <EmailInput inputHeight="52px" />
-            <Button className=" top-[.7rem]  h-[56px] w-[193px] bg-[#FF6700]">
-              Search
-            </Button>
-            <Box className="mt-20 flex justify-end">
-              <Text className=" text-[#FFFFFF]">
-                Terms and Condtions . Privacy Policy
-              </Text>
-            </Box>
+            <Newsletter />
           </Box>
         </Box>
       </Box>
