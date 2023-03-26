@@ -2,11 +2,13 @@ import '../styles/global.css';
 
 import type { ColorScheme } from '@mantine/core';
 import { Box, ColorSchemeProvider, MantineProvider } from '@mantine/core';
-import { NotificationsProvider } from '@mantine/notifications';
 import { getCookie, setCookies } from 'cookies-next';
 import type { GetServerSidePropsContext } from 'next';
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
+import { ToastProvider } from 'react-toast-notifications';
+
+// Now you can access your environment variables using process.env.MY_VARIABLE
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -35,9 +37,9 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             withGlobalStyles
             withNormalizeCSS
           >
-            <NotificationsProvider>
+            <ToastProvider>
               <Component {...pageProps} />
-            </NotificationsProvider>
+            </ToastProvider>
           </MantineProvider>
         </ColorSchemeProvider>
       </Box>

@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import useAxios from './useAxios';
 
-const useApi = (baseUrl: any) => {
-  const [data, setData] = useState(null);
+const useApi = (baseUrl: string) => {
   const [apiError, setApiError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -12,45 +11,48 @@ const useApi = (baseUrl: any) => {
   const get = async (url: string) => {
     try {
       const response = await axios.get(url);
-      setData(response.data);
       setLoading(isLoading);
+      return response;
     } catch (err) {
       setApiError(error);
+      throw err;
     }
   };
 
   const post = async (url: string, body: any) => {
     try {
       const response = await axios.post(url, body);
-      setData(response.data);
       setLoading(isLoading);
+      return response;
     } catch (err) {
       setApiError(error);
+      throw err;
     }
   };
 
   const put = async (url: string, body: any) => {
     try {
       const response = await axios.put(url, body);
-      setData(response.data);
       setLoading(isLoading);
+      return response;
     } catch (err) {
       setApiError(error);
+      throw err;
     }
   };
 
   const del = async (url: string) => {
     try {
-      await axios.delete(url);
-      setData(null);
+      const response = await axios.delete(url);
       setLoading(isLoading);
+      return response;
     } catch (err) {
       setApiError(error);
+      throw err;
     }
   };
 
   return {
-    data,
     loading,
     error: apiError,
     get,

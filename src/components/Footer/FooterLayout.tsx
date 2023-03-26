@@ -13,6 +13,9 @@ import {
   Youtube,
 } from '../Reusables/SVGs/Svg';
 
+// interface FooterLayoutProps {
+//   handleCloseBtn: () => void;
+// }
 const FooterLayout = () => {
   const router = useRouter();
   function handleChange() {

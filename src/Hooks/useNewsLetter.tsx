@@ -1,21 +1,40 @@
+/* eslint-disable no-console */
+import type { AxiosResponse } from 'axios';
 import { useState } from 'react';
 
 import useApi from './Services/useApi';
 
-const apiUrl = 'https://your-strapi-url.com';
+const apiUrl = process.env.NEXT_PUBLIC_API_URL?.toString() ?? '';
+interface ErrorResponse {
+  error: unknown;
+}
 
+interface SuccessResponse {
+  data: string;
+  status: number;
+}
+
+type Response = SuccessResponse | ErrorResponse;
 export const useNewsletter = () => {
-  const [email, setEmail] = useState('');
+  const [emailValue, setEmail] = useState('');
   const { loading, error, post } = useApi(apiUrl);
+  const [status, setStatus] = useState<number>(0);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    alert('Triggered!');
+  const handleSubmit = async (): Promise<AxiosResponse<Response>> => {
+    const formData = {
+      email: emailValue,
+    };
     try {
-      await post('/newsletters', { email });
+      const responseData: AxiosResponse<Response> = await post('/newsletters', {
+        data: formData,
+      });
+      if ('status' in responseData) {
+        setStatus(responseData.status);
+      }
       setEmail('');
-    } catch (err) {
-      console.error(err);
+      return responseData;
+    } catch (err: any) {
+      return Promise.reject(err.response);
     }
   };
 
@@ -24,7 +43,8 @@ export const useNewsletter = () => {
   };
 
   return {
-    email,
+    emailValue,
+    status,
     handleChange,
     handleSubmit,
     loading,

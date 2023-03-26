@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 const useAxios = (baseUrl: any) => {
   const [loading, setLoading] = useState(false);
+  // const [data, setData] = useState({});
   const [error, setError] = useState(null);
 
   const instance = axios.create({

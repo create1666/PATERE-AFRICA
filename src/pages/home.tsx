@@ -119,6 +119,7 @@ const Home = () => {
     const prefillUrl = `${formUrl}&entry.1113385170=${encodedEmailPlaceholder}&entry.871292895=${encodedNamePlaceholder}`; // Replace the field IDs with the appropriate ones from your form
     window.location.href = prefillUrl;
   };
+
   return (
     <AppShell
       meta={
@@ -258,17 +259,17 @@ const Home = () => {
             </Box>
           </Box>
         </Box>
-        <div className=" mb-10 flex h-[198px] items-center justify-between bg-[#004E98] p-[40px]">
-          <Box className="text-[#ffff]">
+        <div className=" mb-10 flex h-auto w-[100%] flex-row items-center justify-between  bg-[#004E98] p-[40px]">
+          <Box className=" w-fit text-[#ffff]">
             <Box className="text-[28px] font-[400]">
               What stock are you currently researching ?
             </Box>
-            <Box className="text-[18px] font-[500]">
+            <Box className="w-fit text-[18px] font-[500]">
               Search any company to see the analysis plus any risks and rewards
               we’ve identified
             </Box>
           </Box>
-          <Box className="relative flex overflow-auto">
+          <Box className="relative flex  w-[40%]">
             <InputSearch
               query={query}
               handleInputChange={handleInputChange}
@@ -278,7 +279,7 @@ const Home = () => {
             />
             <Button
               onClick={handleButtonClick}
-              className=" top-[0.11rem] left-[-8rem] h-[54px] w-[125px] bg-[#FF6700] outline-[#ffff]"
+              className=" top-[0.0118rem] left-[-7.85rem] h-auto min-w-[125px] bg-[#FF6700] outline-[#ffff]"
             >
               Search
             </Button>
