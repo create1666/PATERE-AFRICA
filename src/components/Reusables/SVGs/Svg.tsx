@@ -1323,4 +1323,279 @@ export const ButtonFooRight = (props: any) => (
   </svg>
 );
 
+export const Twitter = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={21}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M23 1.302a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.279-.028-.557-.08-.83A7.72 7.72 0 0 0 23 1.302v0Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Instagram = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={25}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M17 2.302H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5v-10a5 5 0 0 0-5-5Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16 11.672a4 4 0 1 1-7.913 1.173A4 4 0 0 1 16 11.672ZM17.5 6.802h.01"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Youtube = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={24}
+    height={25}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M22.54 6.722a2.78 2.78 0 0 0-1.94-2c-1.72-.42-8.6-.42-8.6-.42s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2 29 29 0 0 0-.46 5.29 29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 1.92c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2c.312-1.733.466-3.49.46-5.25a29.005 29.005 0 0 0-.46-5.33v0Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="m9.75 15.322 5.75-3.27-5.75-3.27v6.54Z"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Email = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={16}
+    height={17}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M11.333 13.969H4.667c-2 0-3.334-1-3.334-3.334V5.968c0-2.333 1.334-3.333 3.334-3.333h6.666c2 0 3.334 1 3.334 3.333v4.667c0 2.334-1.334 3.334-3.334 3.334Z"
+      stroke="#5C7184"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.333 6.302 9.247 7.968c-.687.547-1.814.547-2.5 0l-2.08-1.666"
+      stroke="#5C7184"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const RightInformation = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={79}
+    height={78}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#a)">
+      <path fill="#fff" d="M9.339 5h60.196v60H9.339z" />
+    </g>
+    <path
+      d="M38.25 33.75 42 37.5 54.5 25"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M53.25 35v8.75a2.5 2.5 0 0 1-2.5 2.5h-17.5a2.5 2.5 0 0 1-2.5-2.5v-17.5a2.5 2.5 0 0 1 2.5-2.5H47"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <filter
+        id="a"
+        x={0.339}
+        y={0}
+        width={78.196}
+        height={78}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={4.5} />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_0_1"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export const SaveTime = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={79}
+    height={78}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#a)">
+      <path fill="#fff" d="M9.343 5h60.196v60H9.343z" />
+    </g>
+    <path
+      d="M41 47.5c6.904 0 12.5-5.596 12.5-12.5S47.904 22.5 41 22.5 28.5 28.096 28.5 35 34.096 47.5 41 47.5Z"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M41 27.5V35l5 2.5"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <filter
+        id="a"
+        x={0.343}
+        y={0}
+        width={78.196}
+        height={78}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={4.5} />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_0_1"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export const EasyToUnderstand = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg
+    width={79}
+    height={78}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g filter="url(#a)">
+      <path fill="#fff" d="M9.339 5h60.196v60H9.339z" />
+    </g>
+    <path
+      d="M44.5 18.5h-10A2.5 2.5 0 0 0 32 21v20a2.5 2.5 0 0 0 2.5 2.5h15A2.5 2.5 0 0 0 52 41V26l-7.5-7.5Z"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M44.5 18.5V26H52M47 32.25H37M47 37.25H37M39.5 27.25H37"
+      stroke="#FF6700"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <defs>
+      <filter
+        id="a"
+        x={0.339}
+        y={0}
+        width={78.196}
+        height={78}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={4} />
+        <feGaussianBlur stdDeviation={4.5} />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+        <feBlend
+          in="SourceGraphic"
+          in2="effect1_dropShadow_0_1"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
 export default VisualRpt;

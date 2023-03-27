@@ -14,7 +14,15 @@ import { Rating } from 'react-simple-star-rating';
 import { AccordionLayout } from '@/components/AccordionShell/AccordionLayout';
 import { AppShell } from '@/components/AppLayout';
 import { UserCardImage } from '@/components/Article/ArticleList';
+import { ButtonShell } from '@/components/Button/Button';
 import { CarouselComponent } from '@/components/Carousel/CarouselLayout';
+import { HeaderNav } from '@/components/Header/Header';
+import { Hero } from '@/components/HeroSection/Hero';
+import {
+  EasyToUnderstand,
+  RightInformation,
+  SaveTime,
+} from '@/components/Reusables/SVGs/Svg';
 import { InputSearch } from '@/components/SearchInput/InputSearch';
 import { Meta } from '@/Seo/Meta';
 
@@ -23,7 +31,7 @@ const useStyles = createStyles(() => ({
     backgroundColor: '#FFFFFF',
     border: '1px solid #E9E9E9',
     boxShadow: '0px 4px 30px rgba(0, 0, 0, 0.1)',
-    borderRadius: '6.99864px',
+    borderRadius: '21.4333px',
     marginBottom: '2rem',
     maxHeight: ' 516px',
     margin: '1rem',
@@ -69,38 +77,48 @@ const arrs = [
   },
 ];
 
-const linearGradient =
+export const linearGradient =
   'linear-gradient(34deg, #fdddc9 11%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)';
-// "linear-gradient(77deg, rgba(255,178,126,1) 7%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)";
-// " linear-gradient(31deg, rgba(255,178,126,1) 7%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)";
-// "linear-gradient(22deg, rgba(255,178,126,1) 7%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)";
-// background: rgb(255,178,126);
-// "linear-gradient(77deg, rgba(255,178,126,1) 7%, rgba(245,245,245,1) 38%, rgba(252,252,252,1) 66%)";
-//  "linear-gradient(7deg, #f9e4da 7%, #ffffff 38%, #ffffff 66%)"
-// const popularStock = [
-//   "Sothema",
-//   "FBN Holdings",
-//   "Misr Fertilizers",
-//   "LabelVie",
-// ];
+
+export const linearGradientHero =
+  'linear-gradient(135deg, hsla(210, 41%, 73%, 1) 0%, hsla(15, 10%, 92%, 1) 100%)';
+export const popularStock = [
+  'Sothema',
+  'FBN Holdings',
+  'Misr Fertilizers',
+  'LabelVie',
+];
 
 const Home = () => {
   const { classes } = useStyles();
   const [rating] = useState(5);
-  // const{arr} = props
 
-  //   const FilteredArticles = props.posts.reduce(
-  //     (prevArticle: any, currentAarticle: any) => {
-  //       return {
-  //         ...prevArticle,
-  //         [currentAarticle.title]: currentAarticle,
-  //       };
-  //     },
-  // {}
-  //   );
-  // Object.getOwnPropertyNames(FilteredArticles);
+  const [query, setQuery] = useState('');
+  const handleInputChange = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setQuery(event.target.value);
+  };
 
-  // console.log("FilteredArticles", FilteredArticles);
+  const handleSearch = (event: { key: string }) => {
+    if (event.key === 'Enter') {
+      window.location.href = `https://www.google.com/search?q=${query}`;
+    }
+  };
+  const handleButtonClick = () => {
+    window.location.href = `https://www.google.com/search?q=${query}`;
+  };
+  const formUrl =
+    'https://docs.google.com/forms/d/e/1FAIpQLSc-Us-OHUVFA5DACXrkbQNdY58sWCAC6NtPdlgbMId2kiaFmw/viewform?usp=pp_url';
+
+  const redirectToForm = () => {
+    const emailPlaceholder = '';
+    const namePlaceholder = '';
+    const encodedEmailPlaceholder = encodeURIComponent(emailPlaceholder);
+    const encodedNamePlaceholder = encodeURIComponent(namePlaceholder);
+    const prefillUrl = `${formUrl}&entry.1113385170=${encodedEmailPlaceholder}&entry.871292895=${encodedNamePlaceholder}`; // Replace the field IDs with the appropriate ones from your form
+    window.location.href = prefillUrl;
+  };
 
   return (
     <AppShell
@@ -112,16 +130,102 @@ const Home = () => {
       }
     >
       <Box
+        className=" invisible min-w-max  md:visible  "
+        style={{ backgroundImage: linearGradientHero }}
+        sx={() => ({
+          paddingLeft: '7.5rem',
+          paddingRight: '7.5rem',
+          paddingTop: '1.875rem',
+        })}
+      >
+        <HeaderNav onClick={redirectToForm} />
+        <Hero
+          popularStock={popularStock}
+          hero
+          inputSearchProps={{
+            id: 'id-s1',
+            name: 'search1',
+            query,
+            handleInputChange,
+            handleSearch,
+          }}
+        />
+      </Box>
+      <Box
         style={{ backgroundImage: linearGradient }}
         sx={() => ({
-          paddingLeft: '4.875rem',
-          paddingRight: '4.875rem',
-          paddingTop: '10.875rem',
+          paddingLeft: '7.5rem',
+          paddingRight: '7.5rem',
           paddingBottom: '2rem',
         })}
       >
+        <Box
+          sx={() => ({})}
+          className="flex h-[539px]  justify-between  bg-[#FAFAFA] "
+        >
+          <Box className="mt-20">
+            <Text className="text-[50px] font-[600] text-[#004E98]">
+              Value Propositions
+            </Text>
+            <Text className="my-[28px] w-[646px] text-[16px] font-[500] text-[#A6A6A6]">
+              To create an investor environment that attract and retain capitaln
+              by telling the stories of Africa’s publicly listed companies from
+              an investor’s angle.
+            </Text>
+            <ButtonShell
+              className="mt-10 h-[56px] w-[248px] bg-[#004E98]"
+              onClick={redirectToForm}
+            >
+              <Text className="text-[#FFFFFF]"> Get early access</Text>
+            </ButtonShell>
+          </Box>
+          <Box className="mt-20">
+            <Box>
+              <div className="flex">
+                <RightInformation />
+                <Box>
+                  <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                    Right information
+                  </Text>
+                  <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                    Access reliable information on share prices, divident and
+                    news of publicly listed companies
+                  </Text>
+                </Box>
+              </div>
+            </Box>
+            <Box className="my-10">
+              <div className="flex">
+                <SaveTime />
+                <Box>
+                  <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                    Save time and money
+                  </Text>
+                  <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                    Save valuable time and money as equity research is
+                    time-consuming and very expensive.
+                  </Text>
+                </Box>
+              </div>
+            </Box>
+            <Box>
+              <div className="flex">
+                <EasyToUnderstand />
+                <Box>
+                  <Text className="mb-5 text-[28px] font-[700] text-[#004E98]">
+                    Easy to understand
+                  </Text>
+                  <Text className="w-[429.4px] text-[18px] font-[500] text-[#A6A6A6] ">
+                    Access real time update of easy to use and understand equity
+                    research reports
+                  </Text>
+                </Box>
+              </div>
+            </Box>
+          </Box>
+        </Box>
         <Box>
-          <Box className="mx-auto  mb-4 -mt-24 flex-wrap ">
+          <Box className="mx-auto mb-4 mt-24 flex-wrap ">
             <Box className="flex w-[965ppx] flex-col items-center text-[50px] font-[600]  text-[#004E98]">
               <Box className="  ">
                 <span className="font-extrabold text-[#004E98]">Unique</span>{' '}
@@ -155,19 +259,28 @@ const Home = () => {
             </Box>
           </Box>
         </Box>
-        <div className=" mb-10 flex h-[198px] items-center justify-between bg-[#004E98] p-[40px]">
-          <Box className="text-[#ffff]">
+        <div className=" mb-10 flex h-auto w-[100%] flex-row items-center justify-between  bg-[#004E98] p-[40px]">
+          <Box className=" w-fit text-[#ffff]">
             <Box className="text-[28px] font-[400]">
               What stock are you currently researching ?
             </Box>
-            <Box className="text-[18px] font-[500]">
+            <Box className="w-fit text-[18px] font-[500]">
               Search any company to see the analysis plus any risks and rewards
               we’ve identified
             </Box>
           </Box>
-          <Box className="relative flex overflow-auto">
-            <InputSearch classNameWrapper="w-[500px] " classNameInput="58px" />
-            <Button className=" top-[0.11rem] -left-[8rem] h-[54px] w-[125px] bg-[#FF6700] outline-[#ffff]">
+          <Box className="relative flex  w-[40%]">
+            <InputSearch
+              query={query}
+              handleInputChange={handleInputChange}
+              handleSearch={handleSearch}
+              classNameWrapper="w-[500px] "
+              classNameInput="58px"
+            />
+            <Button
+              onClick={handleButtonClick}
+              className=" top-[0.0118rem] left-[-7.85rem] h-auto min-w-[125px] bg-[#FF6700] outline-[#ffff]"
+            >
               Search
             </Button>
           </Box>
@@ -188,14 +301,9 @@ const Home = () => {
             .fill('')
             .map((item) => {
               return (
-                <Card
-                  key={item}
-                  radius="md"
-                  className={classnames(classes.card)}
-                >
+                <Card key={item} className={classnames(classes.card)}>
                   <Box className="p-5">
                     <Box>
-                      {' '}
                       <Rating
                         initialValue={rating}
                         className=""
@@ -203,7 +311,7 @@ const Home = () => {
                         fillColor="#FF6700"
                       />
                     </Box>
-                    <Box className=" max-w-[18.084rem my-10 text-[#004E98]">
+                    <Box className=" mb-10  text-[#004E98]">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
                       aliquam, purus sit amet luctus venenatis, lectus magna
                     </Box>
@@ -254,6 +362,7 @@ const Home = () => {
 // console.log(moreArticles);
 //   return { props: { article, moreArticles } };
 // };
+// https://docs.google.com/forms/d/e/1FAIpQLSc-Us-OHUVFA5DACXrkbQNdY58sWCAC6NtPdlgbMId2kiaFmw/viewform?usp=sf_link
 const posts = [
   {
     title: 'Music',
