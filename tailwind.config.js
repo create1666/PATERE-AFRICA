@@ -1,7 +1,15 @@
 /** @type {import('tailwindcss').Config} */
+/** @type {@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap')} */
+
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
     fontSize: {
       xs: '0.75rem',
       sm: '0.875rem',
