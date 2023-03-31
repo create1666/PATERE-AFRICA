@@ -12,15 +12,15 @@ const NavBarLinks = [
   { label: ' About Us', href: '/about' },
   {
     label: ' Shrefck Screener',
-    href: '/Shrefckscreener/',
+    href: '/Shrefckscreener',
   },
   {
     label: ' Pricing ',
-    href: '/Pricing/',
+    href: '/Pricing',
   },
   {
     label: 'Market Insights',
-    href: '/MarketInsights/',
+    href: '/marketInsights',
   },
 ];
 
@@ -32,11 +32,12 @@ interface HeaderProps {
 export const HeaderNav: React.FC<HeaderProps> = ({ wailist, onClick }) => {
   const [activeRoute, setActiveRoute] = useState('');
   const router = useRouter();
+
   useEffect(() => {
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < NavBarLinks.length; i++) {
       /** @ts-ignore */
-      if (NavBarLinks[i].href.includes(router.pathname.split('/')[2])) {
+      if (NavBarLinks[i].href.includes(router.pathname)) {
         /** @ts-ignore */
         setActiveRoute(NavBarLinks[i].href);
       }
