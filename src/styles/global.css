@@ -2,19 +2,16 @@
 
 
 @tailwind components;
-
 @tailwind utilities;
 
-
-
-body{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-  
+* {
+    scroll-behavior: smooth;
+    font-family: 'Inter', Kumbh Sans, sans-serif, Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .placeholdr input::placeholder {

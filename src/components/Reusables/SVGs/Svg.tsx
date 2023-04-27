@@ -1194,7 +1194,7 @@ export const ArrowRight = () => (
     />
   </svg>
 );
-const VisualRpt = (
+export const VisualRpt = (
   props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
 ) => (
   <svg
@@ -1597,5 +1597,3 @@ export const EasyToUnderstand = (
     </defs>
   </svg>
 );
-
-export default VisualRpt;

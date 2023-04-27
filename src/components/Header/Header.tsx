@@ -12,15 +12,25 @@ const NavBarLinks = [
   { label: ' About Us', href: '/about' },
   {
     label: ' Shrefck Screener',
-    href: '/Shrefckscreener/',
+    href: '/Shrefckscreener',
   },
   {
     label: ' Pricing ',
-    href: '/Pricing/',
+    href: '/Pricing',
   },
   {
     label: 'Market Insights',
-    href: '/MarketInsights/',
+    href: '/marketInsights',
+    childRef: [
+      {
+        name: ' Technology',
+        path: '/marketInsights/consumerGoods',
+      },
+      {
+        name: ' Consumer goods',
+        path: '/marketInsights/technology',
+      },
+    ],
   },
 ];
 
@@ -30,18 +40,27 @@ interface HeaderProps {
 }
 
 export const HeaderNav: React.FC<HeaderProps> = ({ wailist, onClick }) => {
-  const [activeRoute, setActiveRoute] = useState('');
+  const [activeRoute, setActiveRoute] = useState<string>('');
+  const [activeChildRoute, setActiveChildRoute] = useState<string>('');
   const router = useRouter();
+  const { category } = router.query;
+  const firstPath = router.pathname.split('/')[1];
+  const pathDelimiter = router.pathname.includes('/') ? '/' : '';
+  const matchedPath = `${pathDelimiter}${firstPath}`;
+  const matchedChildPath = `${pathDelimiter}${firstPath}${pathDelimiter}${category}`;
+
   useEffect(() => {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < NavBarLinks.length; i++) {
-      /** @ts-ignore */
-      if (NavBarLinks[i].href.includes(router.pathname.split('/')[2])) {
-        /** @ts-ignore */
-        setActiveRoute(NavBarLinks[i].href);
-      }
-    }
-  }, []);
+    const pathmatch = NavBarLinks.some(
+      (route) =>
+        router.pathname.includes(route.href) ||
+        (route.childRef &&
+          route.childRef.some((childRoute) =>
+            router.pathname.includes(childRoute.path)
+          ))
+    );
+    setActiveRoute(pathmatch ? matchedPath : '');
+    setActiveChildRoute(pathmatch ? matchedChildPath : '');
+  }, [matchedPath, matchedChildPath, router.pathname]);
 
   return (
     <>
@@ -75,8 +94,11 @@ export const HeaderNav: React.FC<HeaderProps> = ({ wailist, onClick }) => {
                     key={index}
                     sx={() => ({
                       color:
-                        router.pathname === item?.href ||
-                        activeRoute === item?.href
+                        activeRoute === item?.href ||
+                        (item.childRef &&
+                          item.childRef.some(
+                            (childRoute) => activeChildRoute === childRoute.path
+                          ))
                           ? '#004E98'
                           : ' #666666',
                       cursor: 'pointer',
@@ -129,8 +151,8 @@ export const HeaderNav: React.FC<HeaderProps> = ({ wailist, onClick }) => {
                     key={index}
                     sx={() => ({
                       color:
-                        router.pathname === item?.href ||
-                        activeRoute === item?.href
+                        activeRoute === item?.href ||
+                        activeRoute === matchedPath
                           ? '#004E98'
                           : ' #666666',
                       cursor: 'pointer',

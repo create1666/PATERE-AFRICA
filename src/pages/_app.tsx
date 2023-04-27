@@ -8,8 +8,6 @@ import type { AppProps } from 'next/app';
 import { useState } from 'react';
 import { ToastProvider } from 'react-toast-notifications';
 
-// Now you can access your environment variables using process.env.MY_VARIABLE
-
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
