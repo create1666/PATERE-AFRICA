@@ -1,7 +1,8 @@
 import { Box } from '@mantine/core';
+import Image from 'next/image';
+import MarketInsightImage from 'public/assets/images/MarketInsightImage.png';
 
 import { HeaderNav } from '@/components/Header/Header';
-import { MarketInsightImage } from '@/components/Reusables/SVGs/Svg';
 import SubHeader from '@/components/SubHeader/SubHeader';
 
 const MarketInsightsLayout = () => {
@@ -12,7 +13,7 @@ const MarketInsightsLayout = () => {
 
       <Box className="flex">
         <Box>
-          <MarketInsightImage />
+          <Image src={MarketInsightImage} alt={'Patere footer Logo'} />
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, ipsa,
           officiis tempora quod, cupiditate iste modi et id quaerat atque ipsum
           fuga maxime saepe asperiores dolore esse? Maxime, voluptatem at?

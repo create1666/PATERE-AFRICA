@@ -4,15 +4,6 @@ import React from 'react';
 
 import { SearchIcon } from '../Reusables/SVGs/Svg';
 
-// interface InputSearchProps {
-//   classNameWrapper?: string;
-//   classNameInput?: string;
-//   IconClassName?: string;
-//   handleSearch?: React.KeyboardEventHandler<HTMLInputElement>;
-//   handleInputChange?: React.ChangeEventHandler<HTMLInputElement>;
-//   query?: string | number | readonly string[];
-// }
-
 export type InputSearchProps = {
   id?: string;
   name?: string;
